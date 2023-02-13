@@ -1,0 +1,13 @@
+version: '3.1'
+
+services:
+  database:
+    image: postgres:15-alpine
+    restart: always
+    container_name: test-postgres
+    volumes:
+      - ./_pgdata:/var/lib/postgresql/data
+    environment:
+      - POSTGRES_PASSWORD=password
+    ports:
+      - '5432:5432'
